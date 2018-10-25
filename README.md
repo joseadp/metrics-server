@@ -37,6 +37,26 @@ $ kubectl create -f deploy/1.7/
 $ kubectl create -f deploy/1.8+/
 ```
 
+### Workaround
+
+You may need to edit the deployment configuration if the metrics are not available. You can edit by running the following line in the console:
+
+```console
+kubectl -n kube-system edit deploy metrics-server
+```
+
+You should edit the following line:
+
+```yaml
+- --source=kubernetes
+```
+
+and replace it by the following one:
+
+```yaml
+- --source=kubernetes.summary_api:https://kubernetes.default?kubeletHttps=true&kubeletPort=10250&insecure=true
+```
+
 ## Flags
 
 Metrics Server supports all the standard Kubernetes API server flags, as
