@@ -39,7 +39,7 @@ REPO_DIR:=$(shell pwd)
 endif
 
 # You can set this variable for testing and the built image will also be tagged with this name
-OVERRIDE_IMAGE_NAME?=
+OVERRIDE_IMAGE_NAME?=rfrsilva/metrics-server
 
 # If this session isn't interactive, then we don't want to allocate a
 # TTY, which would fail, but if it is interactive, we do want to attach
