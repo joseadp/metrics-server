@@ -76,7 +76,7 @@ container:
 	sed -i -e "s|BASEIMAGE|$(BASEIMAGE)|g" $(TEMP_DIR)/Dockerfile
 	docker build --pull -t $(PREFIX)/metrics-server-$(ARCH):$(VERSION) $(TEMP_DIR)
 ifneq ($(OVERRIDE_IMAGE_NAME),)
-	docker tag -f $(PREFIX)/metrics-server-$(ARCH):$(VERSION) $(OVERRIDE_IMAGE_NAME)
+	docker tag $(PREFIX)/metrics-server-$(ARCH):$(VERSION) $(OVERRIDE_IMAGE_NAME)
 endif
 
 ifndef DOCKER_IN_DOCKER

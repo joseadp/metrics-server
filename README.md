@@ -33,5 +33,9 @@ the top-level directory of this repository:
 $ kubectl create -f deploy/1.7/
 
 # Kubernetes > 1.8
-$ kubectl create -f deploy/1.8+/
+On Worker Node:
+	make .PHONY
+	docker tag rfrsilva/metrics-server rfrsilva/metrics-server:0.1 
+On Master Node:
+	$ kubectl create -f deploy/1.8+/
 ```
