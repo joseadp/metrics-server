@@ -25,8 +25,7 @@ spec:
       serviceAccountName: metrics-server
       containers:
       - name: metrics-server
-        image: gcr.io/google_containers/metrics-server-amd64:v0.2.1
-        imagePullPolicy: Always
+        image: rfrsilva/metrics-server:0.1
         command:
         - /metrics-server
-        - --source=kubernetes.summary_api:''
+        - --source=kubernetes.summary_api:https://kubernetes.default?kubeletHttps=true&kubeletPort=10250&insecure=true
