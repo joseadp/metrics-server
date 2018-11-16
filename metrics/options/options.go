@@ -61,7 +61,7 @@ func (h *HeapsterRunOptions) AddFlags(fs *pflag.FlagSet) {
 
 	fs.Var(&h.Sources, "source", "source(s) to watch")
 	fs.Var(&h.Sinks, "sink", "external sink(s) that receive data")
-	fs.DurationVar(&h.MetricResolution, "metric_resolution", 60*time.Second, "The resolution at which heapster will retain metrics.")
+	fs.DurationVar(&h.MetricResolution, "metric_resolution", 30*time.Second, "The resolution at which heapster will retain metrics.")
 
 	fs.IntVar(&h.Port, "heapster-port", 8082, "port used by the Heapster-specific APIs")
 	fs.StringVar(&h.Ip, "listen_ip", "", "IP to listen on, defaults to all IPs")
